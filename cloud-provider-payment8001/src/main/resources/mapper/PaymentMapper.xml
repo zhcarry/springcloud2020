@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.atguigu.springcloud.dao.mapper.PaymentMapper">
+    <select id="selectPaymentById" parameterType="long" resultType="com.atguigu.springcloud.dao.pojo.Payment">
+        select id, serial from payment
+        where id = #{id}
+    </select>
+    <insert id="insertPayment" parameterType="com.atguigu.springcloud.dao.pojo.Payment">
+        insert into payment (serial) values (#{serial})
+    </insert>
+</mapper>
